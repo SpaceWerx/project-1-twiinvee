@@ -7,7 +7,7 @@ public class User {
 	private int id;
 	private String username;
 	private String password;
-	private String role;
+	private Role role;
 	
 	
 	
@@ -22,7 +22,7 @@ public class User {
 
 //  2. generate constructor using fields, all box checked. This is all-args 
 	
-	public User(int id, String username, String password, String role) {
+	public User(int id, String username, String password, Role role) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -62,12 +62,12 @@ public class User {
 	}
 
 
-	public String getRole() {
+	public Role getRole() {
 		return role;
 	}
 
 
-	public void setRole(String role) {
+	public void setRole(Role role) {
 		this.role = role;
 	}
 

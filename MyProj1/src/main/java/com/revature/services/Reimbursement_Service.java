@@ -1,6 +1,6 @@
 package com.revature.services;
 
-public class ReimbursementService {
+public class Reimbursement_Service {
 	
 	
 // Update Reimbursement Method	

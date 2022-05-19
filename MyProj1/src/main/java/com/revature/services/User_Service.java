@@ -1,5 +1,5 @@
 package com.revature.services;
 
-public class AuthService {
+public class User_Service {
 
 }
