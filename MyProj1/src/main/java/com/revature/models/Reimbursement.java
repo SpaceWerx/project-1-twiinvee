@@ -2,8 +2,8 @@ package com.revature.models;
 
 public class Reimbursement {
 	
-	private int id;
-	private String author;
+	private int userId;
+	private int author;
 	private int resolver;
 	private String description;
 	private ReimbursementType type;
@@ -21,10 +21,10 @@ public class Reimbursement {
 
 	
 //  2. generate constructor using fields, all box checked. This is all-args 
-public Reimbursement(int id, String author, int resolver, String description, ReimbursementType type, Status status,
+public Reimbursement(int userId, int author, int resolver, String description, ReimbursementType type, Status status,
 		double amount) {
 	super();
-	this.id = id;
+	this.userId = userId;
 	this.author = author;
 	this.resolver = resolver;
 	this.description = description;
@@ -35,21 +35,21 @@ public Reimbursement(int id, String author, int resolver, String description, Re
 
 
 public int getId() {
-	return id;
+	return userId;
 }
 
 
-public void setId(int id) {
-	this.id = id;
+public void setId(int userId) {
+	this.userId = userId;
 }
 
 
-public String getAuthor() {
+public int getAuthor() {
 	return author;
 }
 
 
-public void setAuthor(String author) {
+public void setAuthor(int author) {
 	this.author = author;
 }
 

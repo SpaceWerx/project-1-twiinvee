@@ -6,7 +6,7 @@
   <name>MyProj1</name>
   
     
-   <dependencies>
+ <dependencies>
 	<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
 	<dependency>
 	    <groupId>org.junit.jupiter</groupId>
@@ -15,22 +15,38 @@
 	    <scope>test</scope>
 	</dependency>
 	<!-- This dependency will let us establish JDBC (Java DataBase Connectivity) -->
-	  	<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<version>42.2.14</version>
-		</dependency>
-		<dependency>
-			<groupId>io.javalin</groupId>
-			<artifactId>javalin</artifactId>
-			<version>4.1.1</version>
-		</dependency>
-	<!--  https://mv.repository.com/artifact/com.google.code.gson/gson -->
-		<dependency>
-			<groupId>com.google.code.gson</groupId>
-			<artifactId>gson</artifactId>
-			<version>2.8.5</version>
+	<dependency>
+		<groupId>org.postgresql</groupId>
+		<artifactId>postgresql</artifactId>
+		<version>42.2.14</version>
+	</dependency>
+	<dependency>
+   		<groupId>io.javalin</groupId>
+    	<artifactId>javalin</artifactId>
+    	<version>4.1.1</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+	<dependency>
+	    <groupId>com.google.code.gson</groupId>
+	    <artifactId>gson</artifactId>
+	    <version>2.8.5</version>
+	</dependency>	
+	<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+	<dependency>
+    		<groupId>org.slf4j</groupId>
+    		<artifactId>slf4j-simple</artifactId>
+    		<version>1.7.31</version>
 		</dependency>
 		
+		<dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>1.10.19</version>
+            <scope>test</scope>
+        </dependency>
+		
+		
+		
+
   </dependencies>
 </project>

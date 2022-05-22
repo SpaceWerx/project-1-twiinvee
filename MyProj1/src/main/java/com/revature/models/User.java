@@ -4,7 +4,7 @@ package com.revature.models;
 
 public class User {
 	
-	private int id;
+	private int Id;
 	private String username;
 	private String password;
 	private Role role;
@@ -16,29 +16,32 @@ public class User {
 	
 	public User() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 
 //  2. generate constructor using fields, all box checked. This is all-args 
 	
-	public User(int id, String username, String password, Role role) {
+	public User(int Id, String username, String password, Role role) {
 		super();
-		this.id = id;
+		this.Id = Id;
 		this.username = username;
 		this.password = password;
 		this.role = role;
 	}
 
+
+
+
+	
 //	3. Gen getters and setters - select all
 	
 	public int getId() {
-		return id;
+		return Id;
 	}
 
-
-	public void setId(int id) {
-		this.id = id;
+	
+	public void setId(int Id) {
+		this.Id = Id;
 	}
 
 
@@ -70,18 +73,6 @@ public class User {
 	public void setRole(Role role) {
 		this.role = role;
 	}
-
-	
-	
-	
-	// example gen cons using fields of username and pw ONLY
-	
-	public User(String username, String password) {
-		super();
-		this.username = username;
-		this.password = password;
-	}
-	
 
 
 	

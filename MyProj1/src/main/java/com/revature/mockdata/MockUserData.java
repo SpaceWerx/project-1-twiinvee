@@ -1,16 +1,21 @@
 package com.revature.mockdata;
+import com.revature.models.User;
+import java.util.ArrayList;
+import java.util.List;
+import com.revature.models.Role;
+
 
 public class MockUserData {
 	private final List<User> users = new ArrayList<>();
 	
 	public MockUserData() {
 		
-		User GENERIC_EMPLOYEE_1 = new User(id: 1, username: "genericEmployee1", password: "genericPassword1", Role.Employee);
-		User GENERIC_EMPLOYEE_2 = new User(id: 2, username: "genericEmployee2", password: "genericPassword2", Role.Employee);
-		User GENERIC_EMPLOYEE_3 = new User(id: 3, username: "genericEmployee3", password: "genericPassword3", Role.Employee);
-		User GENERIC_FINANCE_MANAGER_1 = new User(id: 4, username: "genericManager1", password: "genericPassword1", Role.Manager);
-		User GENERIC_FINANCE_MANAGER_2 = new User(id: 5, username: "genericManager2", password: "genericPassword2", Role.Manager);
-		User GENERIC_FINANCE_MANAGER_3 = new User(id: 6, username: "genericManager3", password: "genericPassword3", Role.Manager);
+		User GENERIC_EMPLOYEE_1 = new User(1,  "genericEmployee1", "genericPassword1", Role.Employee);
+		User GENERIC_EMPLOYEE_2 = new User(2,  "genericEmployee2", "genericPassword2", Role.Employee);
+		User GENERIC_EMPLOYEE_3 = new User(3, "genericEmployee3", "genericPassword3", Role.Employee);
+		User GENERIC_FINANCE_MANAGER_1 = new User( 4,  "genericManager1",  "genericPassword1", Role.Manager);
+		User GENERIC_FINANCE_MANAGER_2 = new User( 5,  "genericManager2",  "genericPassword2", Role.Manager);
+		User GENERIC_FINANCE_MANAGER_3 = new User( 6,  "genericManager3",  "genericPassword3", Role.Manager);
 		
 		users.add(GENERIC_EMPLOYEE_1);
 		users.add(GENERIC_EMPLOYEE_2);
@@ -20,6 +25,6 @@ public class MockUserData {
 		users.add(GENERIC_FINANCE_MANAGER_3);
 	}
 	
-	
-	public List<User> getUsers() { return users; L}
+
+	public List<User> getUsers() {return users;}
 }
