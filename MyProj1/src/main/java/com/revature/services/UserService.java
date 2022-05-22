@@ -14,7 +14,7 @@ public class UserService {
     public User getUserUsername(String username) {
         return userDAO.getByUsername(username);
     }
-//////////////////////////////////////////////////
+
 
     public List<User> getAllUsers() {
         return userDAO.getAllUsers();
@@ -30,11 +30,10 @@ public class UserService {
         System.out.println("This ID does not exist");
 }
 //////////////////////////////////////////////
-    public List<User> getUserByRole(int i){
+    public List<User> getUserByRole(Role role){
         List<User> byRole = new ArrayList<>();
         for(User user : userDAO.getAllUsers()) {
-            if(user.getRole() == i) 
-            {
+            if(user.getRole() == role)  {
                 byRole.add(user);
             }
         }
@@ -51,7 +50,7 @@ public class UserService {
         //take in the Employee object sent from the menu and send it to the EmployeeDAO to be inserted into the database
 
         //call the DAO method that inserts the new Employee
-        userDAO.create(newEmployee);
+        UserDAO.create(newEmployee);
     }
 
     public boolean checkUserExistsById(int id) {

@@ -179,9 +179,6 @@ public class MenuServices {
 	}
 		
 }
-	
-	
-	
 // ParseIntegerAndDoubleHelper.png
 	/** 
 	 * Attempt to parse input from the user as an int to be useful for control-flow.
@@ -222,7 +219,7 @@ public class MenuServices {
 			ids[i] = users.get(i).getId();
 		}
 		
-		//		Ask for employee ID number to continue
+		//	Ask for employee ID number to continue
 		System.out.println("----------------------------------------");
 		System.out.println("PLEASE ENTER THE NUMBER OF YOUR CHOICE");
 	
@@ -296,7 +293,7 @@ public class MenuServices {
 	
 //	DisplayPreviousRequestsHelperMethod.png
 	
-	public void displayPreviousRequest(User employee) {
+	public void displayPreviousRequests(User employee) {
 		List<Reimbursement> reimbursements = rService.getReimbursementsByAuthor(employee.getId());
 		
 		if (reimbursements.isEmpty()) {
@@ -308,9 +305,6 @@ public class MenuServices {
 		}
 		
 	}
-
-	
-
 	
 //DisplayMenuMethod.png
 	
@@ -319,10 +313,10 @@ public class MenuServices {
 		
 		//		Greeting for the user
 		System.out.println("------------------------------------------------------------");
-		System.out.println("Welcome to the REvature Reimbursement System");
+		System.out.println("Welcome to the Revature Reimbursement System");
 		System.out.println("------------------------------------------------------------");
 		System.out.println();
-	}
+
 	
 	//	display the menu as long as the menuOptions boolean == true
 	// display all my menu options until boolean == false
@@ -354,18 +348,82 @@ public class MenuServices {
 				break;
 		}
 	} //end of while loop
-} // end of displayMenu method
+	
+	}	// end of displayMenu method
 	
 //	DisplayManagerMenuMethod.png
 	
+	public void displayFinanceManagerMenu(User manager) {
+		boolean managerPortal = true;
+		
+		System.out.println("------------------------------------------------------------");
+		System.out.println("Welcome to the Manager Portal, " + manager.getUsername());
+		System.out.println("------------------------------------------------------------");
+		System.out.println();
 	
-	
+		while (managerPortal) {
+			System.out.println("PLEASE ENTER THE NUMBER OF YOUR CHOICE");
+			System.out.println("1 -> View All Pending Reimbursements");
+			System.out.println("2 -> View All Resolved Reimbursements");
+			System.out.println("3 -> Process a Reimbursement");
+			System.out.println("0 -> Return to Main Menu");
+			
+			//	The user choose a menu option and the scanner takes the input and put it into an int variable
+			int firstChoice = promptSelection(1,2,3,0);
+			
+			switch (firstChoice) {
+				case 1:
+					displayPendingReimbursements();
+					break;
+				case 2:
+					displayResolvedReimbursements();
+					break;
+				case 3: 
+					processReimbursement(manager);
+					break;
+				case 0:
+					System.out.println("Returning to Main Menu...");
+					managerPortal = false;
+					break;
+			
+			}	
+		}
+	}
 	
 //	DisplayEmployeeMenuMethod.png
+	public void displayEmployeeMenu(User employee) {
+		boolean employeePortal = true;
+		
+		System.out.println("------------------------------------------------------------");
+		System.out.println("Welcome to the Employee Portal, " + employee.getUsername());
+		System.out.println("------------------------------------------------------------");
+		System.out.println();
 	
-	
+		while (employeePortal) {
+			System.out.println("PLEASE ENTER THE NUMBER OF YOUR CHOICE");
+			System.out.println("1 -> View Previous Requests");
+			System.out.println("2 -> Submit a Reimbursement");
+			System.out.println("0 -> Return to Main Menu");
+			
+			//	The user choose a menu option and the scanner takes the input and put it into an int variable
+			int firstChoice = promptSelection(1,2,0);
+			
+			switch (firstChoice) {
+				case 1:
+					displayPreviousRequests(employee);
+					break;
+				case 2:
+					submitReimbursement(employee);
+					break;
+				case 0:
+					System.out.println("Returning to Main Menu...");
+					employeePortal = false;
+					break;
+			
+			}	
+		}
+	}
 
-	
 	
 }
 		
