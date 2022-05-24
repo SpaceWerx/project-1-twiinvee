@@ -34,6 +34,12 @@ public Reimbursement(int userId, int author, int resolver, String description, R
 }
 
 
+public Reimbursement(int int1, int int2, int int3, String string, ReimbursementType valueOf,
+		javax.net.ssl.SSLEngineResult.Status valueOf2, double double1) {
+	// TODO Auto-generated constructor stub
+}
+
+
 public int getId() {
 	return userId;
 }

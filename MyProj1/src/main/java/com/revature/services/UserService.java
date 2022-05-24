@@ -11,6 +11,8 @@ public class UserService {
 	
 	static UserDAO userDAO = new UserDAO();
 
+	
+	//Get User by username Method
     public User getUserUsername(String username) {
         return userDAO.getByUsername(username);
     }
@@ -19,7 +21,12 @@ public class UserService {
     public List<User> getAllUsers() {
         return userDAO.getAllUsers();
     }
-/////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    
+    
+    
+    
+  //if Id exist
     public void UserExistsById(int id) {
     for(User user : userDAO.getAllUsers()) {
         if(user.getId()== id) {
@@ -29,7 +36,11 @@ public class UserService {
     }
         System.out.println("This ID does not exist");
 }
-//////////////////////////////////////////////
+    
+    
+    
+    
+  //get user by role
     public List<User> getUserByRole(Role role){
         List<User> byRole = new ArrayList<>();
         for(User user : userDAO.getAllUsers()) {
@@ -40,17 +51,24 @@ public class UserService {
 
         return byRole;
     }
-/////////////////////////////////////////////////////////////////////////
+    
+    
+    
+//get user by ID
     public User getUserById(int id) {
         return userDAO.getUserbyId(id);
     }
-//////////////////////////////////////////////////////////////////////////
+    
+    
+    
+    
+//create employee
     public void addUser(User newEmployee) throws SQLException {
 
         //take in the Employee object sent from the menu and send it to the EmployeeDAO to be inserted into the database
 
         //call the DAO method that inserts the new Employee
-        UserDAO.create(newEmployee);
+        userDAO.create(newEmployee);
     }
 
     public boolean checkUserExistsById(int id) {

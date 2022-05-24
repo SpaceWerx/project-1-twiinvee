@@ -14,7 +14,7 @@ import com.revature.utilities.ConnectionFactoryUtility;
 
 public class UserDAO {
 
-
+//get user by ID
 	public User getUserbyId(int id) {
 
 	        try(Connection connection = ConnectionFactoryUtility.getConnection()){
@@ -42,11 +42,11 @@ public class UserDAO {
 	        }
 	        return null;
 	    }
-	/////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	
 	
-	public static User getByUsername(String username) {
+	//Get User by Username Method
+	public User getByUsername(String username) {
 
 		try(Connection connection = ConnectionFactoryUtility.getConnection()){
 
@@ -76,8 +76,8 @@ public class UserDAO {
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	
-
-	public static int create(User user) {
+	// Create User Method
+	public int create(User user) {
 		try(Connection connection = ConnectionFactoryUtility.getConnection()){
 
 		            String sql = "INSERT INTO ers_users (id, username, password, role)"
@@ -107,7 +107,7 @@ public class UserDAO {
 		    }
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	
+//	Get All Users Method
 	public List<User> getAllUsers() {
 
 	    try(Connection connection = ConnectionFactoryUtility.getConnection()){

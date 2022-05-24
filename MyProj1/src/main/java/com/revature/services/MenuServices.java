@@ -138,7 +138,7 @@ public class MenuServices {
 			int[] ids = new int[reimbursements.size()];
 			for (int i = 0; i< reimbursements.size(); i++) {
 				Reimbursement r = reimbursements.get(i);
-				User author = userService.getUserByRole(r.getAuthor());
+				User author = userService.getUserById(r.getAuthor());
 				System.out.println(r.getId() + " -> " + author.getUsername() + " : $" + r.getAmount());
 				ids[i] = r.getId();
 			}
