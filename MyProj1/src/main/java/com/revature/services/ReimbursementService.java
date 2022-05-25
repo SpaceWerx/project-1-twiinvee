@@ -1,5 +1,4 @@
 package com.revature.services;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +8,6 @@ import com.revature.models.Role;
 import com.revature.models.Status;
 import com.revature.models.User;
 import com.revature.repositories.ReimbursementDAO;
-import com.revature.repositories.UserDAO;
 
 public class ReimbursementService {
 	

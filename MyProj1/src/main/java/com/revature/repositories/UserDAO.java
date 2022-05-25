@@ -46,7 +46,7 @@ public class UserDAO {
 	
 	
 	//Get User by Username Method
-	public User getByUsername(String username) {
+	public static User getByUsername(String username) {
 
 		try(Connection connection = ConnectionFactoryUtility.getConnection()){
 
@@ -77,7 +77,7 @@ public class UserDAO {
 	
 	
 	// Create User Method
-	public int create(User user) {
+	public static int create(User user) {
 		try(Connection connection = ConnectionFactoryUtility.getConnection()){
 
 		            String sql = "INSERT INTO ers_users (id, username, password, role)"
@@ -86,7 +86,7 @@ public class UserDAO {
 
 		            PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
-		            preparedStatement.setInt(1, user.getUserId());
+		            preparedStatement.setInt(1, user.getId());
 		            preparedStatement.setString(2, user.getUsername());
 		            preparedStatement.setString(3, user.getPassword());
 		            preparedStatement.setObject(4, user.getRole().name());

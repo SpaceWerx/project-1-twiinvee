@@ -54,7 +54,7 @@ public class ConnectionFactoryUtility {
     	
     	
     	//the url to my database schema
-    	String url = "jdbc:postgresql://javaproject1.ccbxgbomitee.us-east-1.rds.amazonaws.com:5432/postgres?currentSchema=p1demo"; // NEED TO CHANGE SERVER URL (from DBeaver) (LAst thing for Week 2)
+    	String url = "jdbc:postgresql://javaproject1.ccbxgbomitee.us-east-1.rds.amazonaws.com:5432/postgres?currentSchema=p1"; 
     	
     	
     	//your postgres username 

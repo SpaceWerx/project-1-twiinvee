@@ -16,16 +16,16 @@ public class AuthService {
 		
 		//	checking if the username already exists in the database 
 		// if the method returns null, the username is available
-		if(userDAO.getByUsername(userToBeRegistered.getUsername()) !=null) {
+		if(UserDAO.getByUsername(userToBeRegistered.getUsername()) !=null) {
 			
 			
 			// Throws a NullPointerException if the username is already taken
-			throw new NullPointerException("Username is already taken");
+		//	throw new NullPointerException("Username is already taken");
 		}
 		
 		//	take in the user object sent from the menu and send it to the userDAO to be inserted into the database
 		// After the entry has been made, the ID of the new user is immediately returned
-		return userDAO.create(userToBeRegistered);
+		return UserDAO.create(userToBeRegistered);
 		
 		
 	}
@@ -53,7 +53,7 @@ public User login(String username, String password) {
 	//	The try+catch block will catch any exceptions thrown by the userDAO methods
 	try {
 			//	REtreiving the user data from the database from the username given
-		user = userDAO.getByUsername(username);
+		user = UserDAO.getByUsername(username);
 		
 		// These conditional statements are checking various contingencies
 		// The first is checking if the user exists and that the password given matches the one stored

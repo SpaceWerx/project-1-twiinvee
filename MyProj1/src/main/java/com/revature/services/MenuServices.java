@@ -14,6 +14,8 @@ public class MenuServices {
 
 	ReimbursementService rService = new ReimbursementService();
     UserService userService = new UserService();
+    
+    
     static Scanner scan = new Scanner(System.in);
    
     
@@ -72,7 +74,8 @@ public class MenuServices {
 			boolean valid = false;
 			while (!valid) {
 				reimbursementToBeSubmitted.setDescription(scan.nextLine());
-				if (!reimbursementToBeSubmitted.getDescription().trim().equals("")) {
+				if (!reimbursementToBeSubmitted.getDescription().trim().equals("")) 
+				{
 					valid = true;
 		
 				}
