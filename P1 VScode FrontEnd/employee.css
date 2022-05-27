@@ -1,0 +1,108 @@
+
+/* employee css part 1
+Automatically sets the height of the entire page based upon content*/ 
+html, 
+body, 
+header, 
+#main {
+	height: auto;
+}
+	/* adding padding and background color to the navbar for appearance */
+	 /* The . calls upon an html class */ 
+	 .navbar {
+	padding-top: 10px;
+	padding-bottom: 10px; 
+	background-color: white;
+
+	 }
+	/* Reducing the Logo size for a better Look */ 
+	/* The # calls upon an html ID */
+	 #nav img {
+	max-height: 150px;
+	 max-width: 150px;
+	 }
+
+	/* Telling the background wrapper div to cover the entire page */ 
+	#bg {
+	position: fixed; 
+	top: 0;
+	 left: 0;
+	  width: 100%;
+	   height: 100%;
+
+
+	}
+
+
+	/* This block makes the background image cover the entire page and always stay centered */ 
+	#bg img {
+	position: absolute; 
+	top: 0; 
+	left: B;
+	 right: 0; 
+	 bottom: 0;
+	  margin: auto; 
+	  min-width: 50%; 
+	  min-height: 50%;
+	}
+
+
+	/* This block styles the center piece that contains all content */ 
+	#display {
+	background-color: white; /* Fallback color*/ 
+	color: black; 
+	font-weight: bold;
+	 border: 3px solid #f1f1f1;
+	  position: absolute;
+	   top: 50%;
+	    left: 50%;
+		 transform: translate(-50%, -50%);
+		  z-index: 2;
+		   width: 80%; 
+		   padding: 20px;
+
+	}
+
+
+
+
+
+/* employee css part 2 
+*Adding padding and centering the sectional title */
+ #display-title {
+	padding: 25px; text-align: center;
+ }
+	/* Adding padding and aligning text to the left for a better Look */ 
+	#display-table {
+	padding: 10px;
+	 text-align: center;
+
+	}
+	/* Padding and alignment styling for the submit reimbursement button */
+	 #display-buttons {
+	text-align: center; 
+	padding-bottom: 10px;
+
+	 }
+	/* Removing default styling for anchors adn matching button styling */ 
+	#submit-anchor {
+	text-decoration: none; 
+	color: black;
+	}
+	/* Matching normal button styling */ /* The : allows you to style on different events */
+	 #submit-anchor:hover {
+	color: white;
+	 }
+
+	/* Removing default styling for anchors adn matching button styling */ 
+	#logout-anchor {
+	text-decoration: none; color: green;
+	}
+
+	/* Matching normal button styling */ 
+	#Logout-anchor:hover {
+	color: white;
+	}
+
+
+

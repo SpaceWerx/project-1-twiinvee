@@ -1,0 +1,11 @@
+﻿MVP (Minimum Viable Product also know as JUST passing) will be the following:
+1. The ability to create reimbursement requests in Postman and have them persist in your database
+2. The ability to pull reimbursement requests from the database
+3. The ability to approve/deny request from the database and have that approval/denial persist in the database
+4. The ability to create users and have them persist in the database
+5. The ability to log into your application and have it query the database and have allow or disallow that log in
+
+
+
+
+This pretty much means that you need to have Javalin and JDBC working

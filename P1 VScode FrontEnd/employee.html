@@ -1,0 +1,123 @@
+	<!--employee html part 1 -->
+<!-- Declaring the document type as html--> 
+<!DOCTYPE html> 
+<html>
+	<!-- The head contains document metadata and references --> 
+	<head>
+	<!-- Setting the page title --> 
+	<title>Employee Portal</title>
+
+	<!-- Bootstrap 5 reference stylesheet --> 
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
+		rel="stylesheet" 
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94wriftjdbrCExsuloBoqy12QVZ6jIW3" 
+		crossorigin="anonymous"
+	/>
+		<!-- Respective CSS stylesheet reference -->
+		 <link href="./employee.css" rel="stylesheet" />
+
+		<!-- Favicon setup with reference to assets folder -->
+		<link rel="icon" type="image/x-icon" href="./favicon.png"> 
+	</head>
+
+	<!-- The body is the main display of the page --> 
+	<body>
+			<!-- Setting the navbar exclusively in the header -->
+			 <header>
+
+			<!-- Navbar class from bootstrap documentation -->
+			<nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+				<!-- wrapper div for styling --> 
+				<div id="nav" class="container">
+					<!-- Revature Logo display on Left of navbar -->
+					<img src="./rev-logo.png" alt="revature logo">
+						<!-- Flex wrap to display the Logout button on the right --> 
+						<div class="d-flex">
+						<!-- Bootstrap button class --> 
+						<button class="btn btn-outline-success">
+							<!-- Anchor to reference other pages --> 
+							<a id="submit-anchor" href="./login.html"> Logout</a>
+							
+			
+						</button> 
+					</div> 
+				</div>
+			</nav> 
+	</header>
+
+	<!--employee html part 2 -->
+		<!-- wrapper div for styling --> 
+		<div id="main">
+			<!-- Background image wrapper div for styling --> 
+			<div id="bg"> 
+				<!-- Background image refence with alt-text -->
+				<img src="./main-background.jpg" alt="tech background">
+			</div>
+
+			<!-- Sectional div for content styling -->
+			<div id="display">
+
+				<!-- H2 Title for the sectional content --> 
+				<h2 id="display-title"><img src="./rev-logo.png" alt="logo background"><br>Employee Portal</h2>
+				
+				<!-- Wrapper div for styling --> 
+				<div id="display-buttons">
+				
+					<!-- Bootstrap button to submit new reimbursement -->
+				<button class="btn btn-outline-dark">
+				<!-- Anchor to reference other pages -->
+				<a id="submit-anchor" href="./submit.html">
+			Submit Reimbursement
+				</a> 
+			</button>
+ 		</div><br><br>
+<center>
+		<!-- Bootstrap table with noch data for styling --> 
+		<table id="display-table" class="table table-striped">
+			<!-- Theod establishes columnames --> 
+			<thead>
+				<!-- Tr is a single record --> 
+				<tr>
+					<!-- This table header with column scope --> 
+					<th scope="col">ID</th> 
+					<th scope="col">Type</th>
+					<th scope="col">Description</th>
+					<th scope="col">Amount</th>
+					<th scope="col">Status</th> 
+				</tr>
+				<tr>
+					<th scope="row">3</th>
+				 
+					<td>Food</td> 
+					<td>Dinner in Orlando</td> 
+					<td>$289.88</td>
+					<td>Pending</td>
+				</tr>
+			</thead>
+
+		<!-- Tbody contains the rows of data -->
+		<tbody id="display-table-body">
+			
+			</tbody>
+		</table><BR><BR><div class="btn-group me-2"  role="group" aria-label="First group">
+			<!-- Bootstrap back button with ID and reference --> 
+			<button id="submit" class="btn btn-outline-primary">
+				<!-- Anchor to return to the other document --> 
+				<a id="submit-anchor" href="./login.html"> Back</a>
+			</button><BR><BR>
+				<button id="submit" class="btn btn-outline-primary">
+					<!-- Anchor to return to the other document --> 
+					<a id="submit-anchor" href="./login.html"> LOGOUT</a>
+				</button>
+	</div></center>
+		<div id="message" hidden>Something went wrong</div>
+	</div> 
+</div>
+
+</body>
+
+<script src=".../server-requests.js"></script>
+<script src="employee.js"></script>
+	
+

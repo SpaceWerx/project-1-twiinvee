@@ -44,39 +44,43 @@ public class Driver {
 
 
 
-		MenuServices menu = new MenuServices();
-		
-		menu.displayMenu();
-		
-//addControllerRoutesMethod.png
 		//Instantiating respective controllers to access methods for the routes configuration
-		AuthController authController = new AuthController();
-		UserController userController = new UserController();
-		ReimbursementController reimbursementController = new ReimbursementController();
+		AuthController ac = new AuthController();
+		UserController uc = new UserController();
+		ReimbursementController rc = new ReimbursementController();
 		
 		//Creating the Javalin app to designate routes
 		//Enabling CORS for all origins to avoid http request constraints
-//		Javalin app = Javalin.create(
-//				config -> {
-//					config.enableCorsForAllOrigins();
-//				}
-//			).start(4000);
-//			
-//			//Now we need our endpoints
-//			app.post("/login", authController.handleLogin);
-//			app.post("/register", authController.handleRegister);
-//			
-//			
-//			app.get();
-//			app.get();
-//			app.get();
-//			app.post();
-//			app.post();
-//			app.get();
-//			app.get();
-//			app.get();
-//			app.get();
+		Javalin app = Javalin.create(
+				config -> {
+					config.enableCorsForAllOrigins();
+				}
+			).start(4000);
 			
+			//Now we need our endpoints
+			app.post("/login", ac.handleLogin); //MVP done WORK
+			app.post("/register", ac.handleRegister); //MVP done WORK
+
+			app.get("/Users", uc.getUserHandler); //mvp done WORK 
+			//make sure sumbit handler matches register handler 
+			
+			app.post("/submit", rc.handleSubmit); //mvp done WORK
+			
+			app.get("/reimbursement", rc.handleGetReimbursement); // MVP done WORK
+			
+			//instead of handleProcess
+			app.put("/denied", rc.handleDenied); // MVP *******near identicle to post
+												//done WORK
+			
+			
+			
+//			app.get("/status", rc.handleGetReimbursementByStatus); // hard code in
+			//	app.get("/userid", uc.handleGetById);
+			// 	app.get("/username", uc.handleGetByUsername);		
+			// app.get("/{id}",reimbursementController.handleGetReimbursementById);
+			// app.get("/author", rc.handleGetReimbursementByAuthor);
+	}	
+}
 		
 //		//Setting the /login path
 //		path("Login", () -> {
@@ -121,5 +125,4 @@ public class Driver {
 //			});
 //	});
 
-}
-}
+

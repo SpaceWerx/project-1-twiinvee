@@ -1,0 +1,194 @@
+	<!--employee html part 1 -->
+<!-- Declaring the document type as html--> 
+<!DOCTYPE html> 
+<html>
+	<!-- The head contains document metadata and references --> 
+	<head>
+	<!-- Setting the page title --> 
+	<title>Admin Portal</title>
+
+	<!-- Bootstrap 5 reference stylesheet --> 
+	<link
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
+		rel="stylesheet" 
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94wriftjdbrCExsuloBoqy12QVZ6jIW3" 
+		crossorigin="anonymous"
+	/>
+		<!-- Respective CSS stylesheet reference -->
+		 <link href="./employee.css" rel="stylesheet" />
+
+		<!-- Favicon setup with reference to assets folder -->
+		<link rel="icon" type="image/x-icon" href="./favicon.png"> 
+	</head>
+
+
+
+		
+		
+		<header>
+			<body>
+				<!-- Setting the navbar exclusively in the header -->
+				 <header>
+	
+				<!-- Navbar class from bootstrap documentation -->
+				<nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+					<!-- wrapper div for styling --> 
+					<div id="nav" class="container">
+						<!-- Revature Logo display on Left of navbar -->
+						<img src="./rev-logo.png" alt="revature logo">
+							<!-- Flex wrap to display the Logout button on the right --> 
+							<div class="d-flex">
+							<!-- Bootstrap button class --> 
+							<button class="btn btn-outline-success">
+								<!-- Anchor to reference other pages --> 
+								<a id="submit-anchor" href="./login.html"> Logout</a>
+								
+				
+							</button> 
+						</div> 
+					</div>
+				</nav> 
+		</header>
+	
+		<div id="main">
+			<!-- Background image wrapper div for styling --> 
+			<div id="bg"> 
+				<!-- Background image refence with alt-text -->
+				<img src="./main-background.jpg" alt="tech background">
+			</div>
+
+			<!-- Sectional div for content styling -->
+			<div id="display">
+
+				<!-- H2 Title for the sectional content --> 
+				<h2 id="display-title"> <img src="./rev-logo.png" alt="logo background"><br> Admin Portal</h2>
+				
+				<!-- Wrapper div for styling --> 
+				<div id="display-buttons">
+				
+					<!-- Bootstrap button to submit new reimbursement -->
+				<button class="btn btn-outline-dark">
+				<!-- Anchor to reference other pages -->
+				<a id="submit-anchor" href="./register.html">Register User</a>
+			</button>
+			<br>
+			<br>
+			<div class="btn-group me-2" role="group" aria-Label="Second group">
+                <!-- Bootstrap submit button with ID -->
+                <button type="submit" id="submit-button" class="btn btn-outline-dark" >
+					<a id="submit-anchor" href="./manager.html">
+						Update Status
+							</a>  
+                </buttons> 
+            </div>
+ 		</div>
+
+		<!-- Bootstrap table with noch data for styling --> 
+		
+	
+
+
+<center>
+       <table id="display-table" class="table table-striped">
+			<!-- Theod establishes columnames --> 
+			<thead>
+				<!-- Tr is a single record --> 
+				<tr>
+					<!-- This table header with column scope --> 
+					<th scope="col">ID</th> 
+					<th scope="col">Type</th>
+					<th scope="col">Description</th>
+					<th scope="col">Amount</th>
+					<th scope="col">Status</th> 
+					<th scope="col">Update</th> 
+                </tr>
+                </thead>
+				<tr>
+                    <th scope="row">1</th>
+                <td>Lodging</td> 
+                <td>Hotel stay in Orlandos</td>
+                <td>$500.00</td>
+               <td>Pending</td> 
+			   <td>	<select class="form-select" id="typeInput">
+				<!-- Setting the options for the dropdown with indicator values --> 
+				<selected>Choose...</option> 
+				<option value="1">Approved</option> 
+				<option value="2">Denied</option>
+			
+			</select> </td> 
+           </tr>
+           <tr>
+               <th scope="row">2</th>
+              
+               <td>Travel</td> 
+               <td>Flights to Orlando</td> 
+               <td>$1000.00</td>
+               <td>Pending</td> 
+			   <td>	<select class="form-select" id="typeInput">
+				<!-- Setting the options for the dropdown with indicator values --> 
+				<selected>Choose...</option> 
+				<option value="1">Approved</option> 
+				<option value="2">Denied</option>
+			
+			</select> </td>
+           </tr> 
+           <tr>
+               <th scope="row">3</th>
+            
+               <td>Food</td> 
+               <td>Dinner in Orlando</td> 
+               <td>$289.88</td>
+               <td>Pending</td>
+			   <td>	<select class="form-select" id="typeInput">
+				<!-- Setting the options for the dropdown with indicator values --> 
+				<selected>Choose...</option> 
+				<option value="1">Approved</option> 
+				<option value="2">Denied</option>
+			
+			</select> </td> 
+           </tr>
+           <tr>
+               <th scope="row">4</th>
+             
+               <td>other</td> 
+               <td>Beach trip with team</td>
+               <td>$750.00</td>
+               <td>Pending</td> 
+			   <td>	<select class="form-select" id="typeInput">
+				<!-- Setting the options for the dropdown with indicator values --> 
+				<selected>Choose...</option> 
+				<option value="1">Approved</option> 
+				<option value="2">Denied</option>
+			
+			</select> </td> 
+           </tr>
+	
+
+		<!-- Tbody contains the rows of data -->
+		<tbody id="display-table-body">
+
+			</tbody>
+		</table>
+<br><br><Br>
+		<div class="btn-group me-2"  role="group" aria-label="First group">
+			<!-- Bootstrap back button with ID and reference --> 
+			<button id="submit" class="btn btn-outline-primary">
+				<!-- Anchor to return to the other document --> 
+				<a id="submit-anchor" href="./login.html"> Back</a>
+			</button><BR><BR>
+				<button id="submit" class="btn btn-outline-primary">
+					<!-- Anchor to return to the other document --> 
+					<a id="submit-anchor" href="./login.html"> LOGOUT</a>
+				</button>
+	</div>
+        </center>
+		<div id="message" hidden>Something went wrong</div>
+	</div> 
+</div>
+
+</body>
+
+<script src=".../server-requests.js"></script>
+<script src="employee.js"></script>
+	
+

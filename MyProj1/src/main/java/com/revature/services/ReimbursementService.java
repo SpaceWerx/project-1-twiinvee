@@ -12,12 +12,9 @@ import com.revature.repositories.ReimbursementDAO;
 public class ReimbursementService {
 	
 // Initiating the DAO and user service to utilize in various methods	
-	 ReimbursementDAO reimbursementDAO = new ReimbursementDAO();
-     UserService userService = new UserService();
+	 static ReimbursementDAO reimbursementDAO = new ReimbursementDAO();
+     static UserService userService = new UserService();
     
-    
-    
-     
      
   public static List<MockReimbursementData> mockData = new ArrayList<>();
   public static ArrayList<Reimbursement> reimbursements = new ArrayList<>();
@@ -32,25 +29,24 @@ public class ReimbursementService {
    * it is meant to update fields and ensure user has manager role
    * The full reimbursement will be returned with updated field
    */
-  public Reimbursement update(Reimbursement unprocessedReimbursement, int resolverId, Status updatedStatus) {
+  public Reimbursement update(Reimbursement unprocessedReimbursement) {
 	  	
 	  // Getting the user information from the resolver ID passed in
-	  User manager = userService.getUserById(resolverId);
-	  
-	  //check if user is manager
-	  if(manager.getRole() != Role.Manager) {
-		  // Throwing an exception if the user is an employee
-		  throw new IllegalArgumentException("An Employee cannot process reimbursement requests.");
-	  } else {
-		  //setting the respective fields with the passed in data
-		  unprocessedReimbursement.setResolver(resolverId);
-		  unprocessedReimbursement.setStatus(updatedStatus);
+//	  User manager = userService.getUserById(resolver);
+//	  
+//	  //check if user is manager
+//	  if(manager.getRole() != Role.Manager) {
+//		  // Throwing an exception if the user is an employee
+//		  throw new IllegalArgumentException("An Employee cannot process reimbursement requests.");
+//	  } else {
+//		  //setting the respective fields with the passed in data
+//		  unprocessedReimbursement.setResolver(resolver);
+//		  unprocessedReimbursement.setStatus(updatedStatus);
 		  
 		  //calling the update method to ensure persistence to database
 		  reimbursementDAO.update(unprocessedReimbursement);
 		  // return reimbursement with updated fields
 		  return unprocessedReimbursement;
-	  }
   }
   
   
@@ -72,7 +68,8 @@ public class ReimbursementService {
 	/**
 	 * This method is meant to return a List of reimbursement records from the database that have a status of Pending.  
 	 */
-	public List<Reimbursement> getPendingReimbursements() { return reimbursementDAO.getByStatus(Status.Pending); }
+	public List<Reimbursement> getPendingReimbursements() { 
+		return reimbursementDAO.getByStatus(Status.Pending); }
 	
 
 	     
@@ -134,23 +131,23 @@ public class ReimbursementService {
 	 * @param reimbursementToBeSubmitted
 	 */
 	
-	public int submitReimbursement (Reimbursement reimbursementToBeSubmitted) {
+	public static int submitReimbursement (Reimbursement reimbursementToBeSubmitted) {
 		
 		
 		// Getting user info. from author ID attached to the reimbursement submission
-		User employee = userService.getUserById(reimbursementToBeSubmitted.getAuthor());
-		
-		//check if user is an employee
-		if(employee.getRole() !=Role.Employee) {
-			// throw exception if user is manager
-			throw new IllegalArgumentException("Manager cannot sumbit reimbursement requests.");
-			
-		} else {
+//		User employee = userService.getUserById(reimbursementToBeSubmitted.getAuthor());
+//		employee.setRole(Role.Employee);
+//		//check if user is an employee
+//		if(employee.getRole() !=Role.Employee) {
+//			// throw exception if user is manager
+//			throw new IllegalArgumentException("Manager cannot sumbit reimbursement requests.");
+//			
+//		} else {
 			//set status as pending by default and calling create method
 			reimbursementToBeSubmitted.setStatus(Status.Pending);
 			// returning the new int ID from the create method
 			return reimbursementDAO.create(reimbursementToBeSubmitted);
-		}
+	
 	}
 	
 	
@@ -194,6 +191,12 @@ public class ReimbursementService {
 	 */
 	public List<Reimbursement> getReimbursementsByAuthor(int userId) {
 		return reimbursementDAO.getReimbursementsByUser(userId);
+	}
+
+
+	public List<Reimbursement> getAllReimbursement() {
+		// TODO Auto-generated method stub
+		return reimbursementDAO.getAllReimbursement();
 	}
 	
 //		public List<Reimbursement> getReimbursementsByAuthor(int userId) {

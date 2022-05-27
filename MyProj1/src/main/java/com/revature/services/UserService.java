@@ -13,8 +13,8 @@ public class UserService {
 
 	
 	//Get User by username Method
-    public User getUserUsername(String username) {
-        return userDAO.getByUsername(username);
+    public User getByUsername(String username) {
+        return UserDAO.getByUsername(username);
     }
 
 

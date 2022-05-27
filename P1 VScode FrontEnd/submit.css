@@ -1,0 +1,100 @@
+/* submit css part 1
+*Automatically sets the height of the entire page based upon content*/
+ html, 
+ body, 
+ header,
+ #main {
+	height: auto;
+
+ }
+	/* adding padding and background color to the navbar for appearance */
+     /* The . calls upon an html class */ 
+     .navbar {
+        padding-top: 10px;
+         padding-bottom: 10px; 
+         background-color: white;
+     }
+
+
+        /* Reducing the Logo size for a better Look */ 
+        /* The # calls upon an html ID */ 
+        #nav img {
+        max-height: 150px; 
+        max-width: 150px;
+
+        }
+
+
+        /* Telling the background wrapper div to cover the entire page */ 
+        #bg {
+        position: fixed;
+         top: 0; 
+         left: 0; 
+         width: 100%; 
+         height: 100%;
+
+        }
+        /* This block makes the background image cover the entire page and always stay centered */
+         #bg img {
+        position: absolute;
+         top: 0;
+          left: 0; 
+          right: 0;
+           bottom: 0;
+            margin: auto;
+             min-width: 50%;
+              min-height: 50%;
+
+         }
+
+        /* This block styles the center piece that contains all content */
+         #display {
+        background-color: white;/* Fallback color */ 
+        color: black;
+         font-weight: bold;
+          border: 3px solid #f1f1f1;
+           position: absolute;
+            top: 50%; 
+            left: 50%;
+             transform: translate(-50%, -50%);
+              z-index: 2;
+               width: 50%; /* Reduced the width for the form Look */ 
+               padding: 20px;
+         }
+    
+    /*submit css part 2*/
+    /*  Adding padding and centering the sectional title */
+     #display-title {
+        padding: 25px; 
+        text-align: center;
+     }
+        /* Padding the form elements for a better Look */
+        /* Percentages are more reactive to window changes */ 
+        .form-container {
+        padding-left: 10%; 
+        padding-right: 10%;
+        }
+
+        /* Slight padding at the bottom to separate inputs */ 
+        .input-group {
+        padding-bottom: 10px;
+        }
+
+        /* Removing default anchor styling and matching button */ 
+        #back-anchor {
+        text-decoration: none;
+        color: red;
+        }
+
+        #back-anchor:hover {
+        color: white;
+        }
+        /* Removing default anchor styling and matching button */
+         #Logout-anchor {
+        text-decoration: none; 
+        color: green;
+         }
+
+        #Logout-anchor:hover {
+        color: white;
+        }

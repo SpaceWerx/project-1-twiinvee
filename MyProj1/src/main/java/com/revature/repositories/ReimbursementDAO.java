@@ -34,7 +34,7 @@ public class ReimbursementDAO {
 			
 			//Setting the update parameters (?'s) with their respective values.
 			preparedStatement.setInt(1, unprocessedReimbursement.getResolver());
-			preparedStatement.setObject(2, unprocessedReimbursement.getStatus());
+			preparedStatement.setObject(2, unprocessedReimbursement.getStatus().name());
 			preparedStatement.setInt(3, unprocessedReimbursement.getId());
 			
 			// executing the record update
@@ -266,7 +266,7 @@ public List<Reimbursement> getAllReimbursement() {
 					resultSet.getInt("author"),
 					resultSet.getInt("resolver"),
 					resultSet.getString("description"),
-					ReimbursementType.valueOf(resultSet.getString("type")),
+					ReimbursementType.valueOf(resultSet.getString("reimbursement")),
 					Status.valueOf(resultSet.getString("status")),
 					resultSet.getDouble("amount")
 					));					
@@ -293,7 +293,7 @@ public int create(Reimbursement reimbursementToBeSubmitted) {
 		
 		//writing out sql insert string to create a new record
 		// ask database to return new id after entry
-		String sql = "INSERT INTO ers_reimbursements (author, description, type, status, amount"
+		String sql = "INSERT INTO ers_reimbursements (author, description, reimbursement, status, amount)"
 				+"VALUES (?, ?, ?::type, ?::status, ?)"
 				+ "RETURNING ers_reimbursements.id";
 		

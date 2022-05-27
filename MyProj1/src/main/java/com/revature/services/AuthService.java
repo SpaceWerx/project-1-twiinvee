@@ -1,5 +1,8 @@
 package com.revature.services;
 
+import java.sql.SQLException;
+
+import com.revature.models.Role;
 import com.revature.models.User;
 import com.revature.repositories.UserDAO;
 
@@ -11,22 +14,22 @@ public class AuthService {
 	 * After registration, the id will be a positive integer.
 	 */
 	
-// making a new user object
+
 	public int register(User userToBeRegistered) {
 		
 		//	checking if the username already exists in the database 
 		// if the method returns null, the username is available
-		if(UserDAO.getByUsername(userToBeRegistered.getUsername()) !=null) {
+		// if(UserDAO.getByUsername(userToBeRegistered.getUsername()) !=null) {}
 			
 			
 			// Throws a NullPointerException if the username is already taken
 		//	throw new NullPointerException("Username is already taken");
-		}
+		
 		
 		//	take in the user object sent from the menu and send it to the userDAO to be inserted into the database
 		// After the entry has been made, the ID of the new user is immediately returned
+
 		return UserDAO.create(userToBeRegistered);
-		
 		
 	}
 	
@@ -45,7 +48,7 @@ public class AuthService {
  * 
  * @return User object	
  */
-public User login(String username, String password) {
+public int login(String username, String password) {
 	
 	//	Instantiating a temporary user
 	User user;
@@ -57,25 +60,25 @@ public User login(String username, String password) {
 		
 		// These conditional statements are checking various contingencies
 		// The first is checking if the user exists and that the password given matches the one stored
-		if (user!=null && password.equals(user.getPassword())) {
+		if (user!=null && password.equals(user.getPassword()) && user.getRole() == Role.Manager) {
 			
 			// If this one is true, the user object is returned and login is deemed successful
-			System.out.println("Logged In Successful!");
-			return user;
+			System.out.println("Manager Logged In Successful!");
+			return 1;
 			
 			// The second is checking if the user exists and the password given is different than the one stored
-		} else if (user!=null && !password.equals(user.getPassword())) {
+		} else if (user!=null && password.equals(user.getPassword()) && user.getRole() == Role.Employee) {
 			
 			// If this one is true and the previous false, a null object is returned and login is deemed unsuccessful
-			System.out.println("Wrong Password");
-			return null;
+			System.out.println("Employee Logged In Successful!");
+			return 2;
 			
 		// The third is the final contingency and will only occur if the username does not exist in the database 
 		} else {
 			
 			// This outcome will return a null object and login is deemed unsuccessful 
 			System.out.println("User Does not Exist!");
-			return null;
+			return 0;
 		}
 	} catch (Exception e) {
 		System.out.println("Login Unsuccessful");
@@ -83,7 +86,7 @@ public User login(String username, String password) {
 	}
 	
 	// if the try+catch does not run, a null object is returned and login is deemed unsuccessful
-	return null;
+	return 0;
 }
 	
 }
